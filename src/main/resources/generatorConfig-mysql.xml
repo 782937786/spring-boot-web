@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<context id="MysqlContext" defaultModelType="flat" targetRuntime="MyBatis3">
+
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<!-- 格式化java代码 -->
+		<property name="javaFormatter" value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+		<!-- 格式化XML代码 -->
+		<property name="xmlFormatter" value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+
+		<!-- 这个插件用来在XXXExample类中生成大小写敏感的LIKE方法 -->
+		<plugin type="org.mybatis.generator.plugins.CaseInsensitiveLikePlugin" />
+
+		<!-- 为生成的Java模型创建一个toString方法 -->
+		<plugin type="org.mybatis.generator.plugins.ToStringPlugin" />
+
+		<!-- 这里引入扩展插件 -->
+		<plugin type="com.mybatis.generator.ext.PaginationPlugin" />
+
+		<!-- 为了防止生成的代码中有很多注释，比较难看，加入下面的配置控制 -->
+		<commentGenerator type="com.mybatis.generator.ext.MyCommentGenerator">
+			<property name="suppressAllComments" value="false" />
+			<property name="addRemarkComments" value="true" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection
+            connectionURL="jdbc:mysql://192.168.2.56:3306/publish_ebay?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"
+            driverClass="com.mysql.jdbc.Driver" password="3eas84kM" userId="zhouping" />
+
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+        <!--生成Model实体类存放位置-->
+		<javaModelGenerator targetPackage="com.fox.item.dao.template.model" targetProject="MAVEN">
+			<property name="trimStrings" value="true" />
+			<property name="rootClass" value="com.seedeer.domain.BaseDomain" />
+		</javaModelGenerator>
+		<!--生成映射文件xml存放位置-->
+		<sqlMapGenerator targetPackage="com.fox.item.dao.template.mapping" targetProject="MAVEN" />
+
+        <!--生成Dao接口类存放位置-->
+		<javaClientGenerator targetPackage="com.fox.item.dao.template.mapper" targetProject="MAVEN"
+			type="XMLMAPPER" />
+
+        <table tableName="db_ebaysite" domainObjectName="EbaySite" enableDeleteByExample="false"
+            enableDeleteByPrimaryKey="false">
+        </table>
+		
+	</context>
+</generatorConfiguration>
