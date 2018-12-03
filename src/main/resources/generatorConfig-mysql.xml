@@ -28,8 +28,8 @@
 		</commentGenerator>
 
 		<jdbcConnection
-            connectionURL="jdbc:mysql://192.168.2.56:3306/publish_ebay?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"
-            driverClass="com.mysql.jdbc.Driver" password="3eas84kM" userId="zhouping" />
+            connectionURL="jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8&amp;zeroDateTimeBehavior=convertToNull"
+            driverClass="com.mysql.jdbc.Driver" password="123456" userId="test" />
 
 		<javaTypeResolver>
 			<property name="forceBigDecimals" value="false" />
