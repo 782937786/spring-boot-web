@@ -3,7 +3,7 @@
 spring boot 搭建的前后端不分离项目
 框架目录结构，只是多了一个src/main/webapp，里面放对应的css、js、jsp等等前端的东西就行
 
-主要是pom.xml文件中的变化。框架搭好之后在软件中运行能访问到页面，但是打包成jar包就访问不到了。pom.xml文件内容如下：重要部分我会标红
+主要是pom.xml文件中的变化。框架搭好之后在软件中运行能访问到页面，但是打包成jar包就访问不到了。pom.xml文件内容如下：重要部分写了备注
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -155,7 +155,7 @@ spring boot 搭建的前后端不分离项目
 			<scope>provided</scope>
 		</dependency>
 
-</dependencies>
+	</dependencies>
 
 	<build>
 		<finalName>item-webapp</finalName>
@@ -173,7 +173,7 @@ spring boot 搭建的前后端不分离项目
 			</plugin>
 		</plugins>
     
-    <!-- 必须要这个打包后程序才能访问 -->
+   		 <!-- 必须要这个打包后程序才能访问 -->
 		<resources>
 			<resource>
 				<directory>${basedir}/src/main/webapp</directory>
